@@ -26,36 +26,32 @@ Symfony Article Aggregator est une application construite avec Symfony 6.4 et PH
 
 1. Clonez le dépôt :
     ```bash
-    git clone https://github.com/votre-utilisateur/votre-repo.git
-    cd votre-repo
+    git clone git@github.com:HammaniMourad/PostsAggregator.git
+    cd PostsAggregator
     ```
 
-2. Installez les dépendances avec Composer :
+3. Lancer le projet :  
+   ```bash
+    docker-compose up -d
+    ```
+
+4. Installez les dépendances avec Composer :
     ```bash
     docker-compose exec web bash
     composer install
     ```
 
-3. Configurez la base de données dans le fichier `.env` :
+5. Configurez la base de données dans le fichier `.env` :
     ```env
     DATABASE_URL="mysql://mourad:mourad@localhost:3306/post_db"
     ```
 
-4. Créez la base de données et exécutez les migrations :
+6. Créez la base de données et exécutez les migrations :
     ```bash
     symfony console doctrine:database:create
     symfony console doctrine:migrations:migrate
     ```
 
-5. Chargez les fixtures:
-    ```bash
-    symfony console doctrine:fixtures:load
-    ```
-
-6. Démarrez le serveur de développement :
-    ```bash
-    symfony server:start
-    ```
 
 ## Utilisation
 
