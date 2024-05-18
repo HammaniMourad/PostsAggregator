@@ -1,5 +1,5 @@
 FROM php:8.1.6-apache
-LABEL maintainer="yassine.echcharafi@gmail.com"
+LABEL maintainer="hammani.mourad@gmail.com"
 
 ########## Packages installation
 RUN apt-get update && apt-get install -y --fix-missing \
