@@ -29,10 +29,12 @@ services:
         arguments:
             $apiUrl: 'https://saurav.tech/NewsAPI/top-headlines/category/health/fr.json'
             $apiKey: ''
+            $cache: '@cache.app'
 
     App\Service\RssAggregator\Lemonde:
         arguments:
-            $rssUrl: 'http://www.lemonde.fr/rss/une.xml'   
+            $rssUrl: 'http://www.lemonde.fr/rss/une.xml' 
+            $cache: '@cache.app'  
 
     App\Serializer\Normalizer\PostNormalizer:
         tags: ['serializer.normalizer']         
