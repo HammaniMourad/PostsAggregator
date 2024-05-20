@@ -11,21 +11,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AggregationController extends AbstractController
 {
-    private $aggregateInterface;
+    private $aggregators;
     private $entityManager;
 
-    public function __construct(AggregateInterface $aggregateInterface, EntityManagerInterface $entityManager)
+    public function __construct(AggregateInterface $aggregators, EntityManagerInterface $entityManager)
     {
-        $this->aggregateInterface[] = $aggregateInterface;
+        $this->aggregators[] = $aggregators;
         $this->entityManager = $entityManager;
     }  
+ 
     
     #[Route('/aggregate', name: 'aggregate')]
     public function aggregate(): JsonResponse
     {
+        $fetchedPosts = [];
         $savedPost = $this->entityManager->getRepository(Post::class);
-        foreach ($this->aggregateInterface as $aggregator) {
-            $fetchedPosts = $aggregator->fetchPosts();
+        foreach ($this->aggregators as $aggregator) {
+            $fetchedPosts = array_merge($fetchedPosts, $aggregator->fetchPosts());
             foreach ($fetchedPosts as $postData) {
                 if (!$savedPost ->findOneBy(['url' => $postData['url']])) {
                     $post = new Post();

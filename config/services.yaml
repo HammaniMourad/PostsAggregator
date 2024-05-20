@@ -22,7 +22,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Service\Common\AggregateInterface:
+        alias:  App\Service\RssAggregator\Lemonde
+
     App\Service\ApiAggregator\SauravTech:
         arguments:
             $apiUrl: 'https://saurav.tech/NewsAPI/top-headlines/category/health/fr.json'
             $apiKey: ''
+
+    App\Service\RssAggregator\Lemonde:
+        arguments:
+            $rssUrl: 'http://www.lemonde.fr/rss/une.xml'    
+
+
+
+  
