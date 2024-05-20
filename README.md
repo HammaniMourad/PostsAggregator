@@ -12,7 +12,6 @@ Symfony Article Aggregator est une application construite avec Symfony 6.4 et PH
 - Affichage simple des articles
 - Authentification pour les sources de données nécessitant des credentials
 - Système de cache pour limiter les requêtes répétitives
-- Optimisation des performances pour gérer de grandes quantités d'articles
 
 ## Prérequis
 
@@ -43,7 +42,11 @@ Symfony Article Aggregator est une application construite avec Symfony 6.4 et PH
 
 5. Configurez la base de données dans le fichier `.env` :
     ```env
-    DATABASE_URL="mysql://mourad:mourad@localhost:3306/post_db"
+    docker:
+    DATABASE_URL="mysql://root:root@db:3306/post_db?serverVersion=8.0.27"
+    localhost
+    DATABASE_URL="mysql://root:root@localhost:3306/post_db?serverVersion=8.0.
+
     ```
 
 6. Créez la base de données et exécutez les migrations :
@@ -56,12 +59,37 @@ Symfony Article Aggregator est une application construite avec Symfony 6.4 et PH
 ## Utilisation
 
 ### Agrégation des articles
+ Pour accéder aux articles agrégés, utilisez l'endpoint suivant :
+ GET /aggregate
 
+## Tâches Réalisées
 
+### Phase 1 : Agrégation d'Articles
+- **Mise en place de l'interface AggregateInterface**
+- **Implémentation du service SauravTech**
+- **Implémentation du service Lemonde**
+- **Configuration des services dans Symfony**
 
-### API REST
+### Phase 2 : API REST
+- **Création d'un contrôleur pour l'API REST**
+- **Mise en place des routes pour accéder aux articles**
 
+### Tâches Supplémentaires
+- **Affichage simple des articles**
+- **Ajout des fonctionnalités de modification, suppression et recherche des articles via l'API**
+- **Prise en charge de l'authentification pour les sources de données nécessitant une authentification**
+- **Intégration d'un système de cache pour limiter les requêtes répétitives**
 
+## Temps Passé
 
-### Affichage des articles
+| Tâche | Temps Passé |
+|-------|--------------|
+| Configuration initiale du projet | 2 heures |
+| Mise en place de l'interface et des services d'agrégation | 3 heures |
+| Implémentation des services SauravTech et Lemonde | 4 heures |
+| Configuration du cache et des services | 1 heures |
+| Création de l'API REST et du contrôleur | 3 heures |
+| Ajout des fonctionnalités supplémentaires | 4 heures |
+| Documentation et README | 1 heure |
+| **Total** | **18 heures** |
 

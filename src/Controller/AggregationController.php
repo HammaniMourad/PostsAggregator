@@ -11,12 +11,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AggregationController extends AbstractController
 {
-    private $aggregators;
+    private iterable $aggregators;
     private $entityManager;
 
-    public function __construct(AggregateInterface $aggregators, EntityManagerInterface $entityManager)
+    public function __construct(iterable $aggregators, EntityManagerInterface $entityManager)
     {
-        $this->aggregators[] = $aggregators;
+        $this->aggregators = $aggregators;
         $this->entityManager = $entityManager;
     }  
  
