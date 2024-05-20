@@ -85,11 +85,11 @@ Symfony Article Aggregator est une application construite avec Symfony 6.4 et PH
 | Tâche | Temps Passé |
 |-------|--------------|
 | Configuration initiale du projet | 2 heures |
-| Mise en place de l'interface et des services d'agrégation | 3 heures |
-| Implémentation des services SauravTech et Lemonde | 4 heures |
+| Mise en place de l'interface et des services d'agrégation | 2 heures |
+| Implémentation des services SauravTech et Lemonde | 3 heures |
 | Configuration du cache et des services | 1 heures |
 | Création de l'API REST et du contrôleur | 3 heures |
-| Ajout des fonctionnalités supplémentaires | 4 heures |
+| Ajout des fonctionnalités supplémentaires | 3 heures |
 | Documentation et README | 1 heure |
-| **Total** | **18 heures** |
+| **Total** | **15 heures** |
 
